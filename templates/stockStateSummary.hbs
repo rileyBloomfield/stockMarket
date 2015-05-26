@@ -1,0 +1,55 @@
+<h4>Stock State Summary</h4>
+
+
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a {{action 'sortBy' 'name'}}>Show All</a></h1>
+        </li>
+    </ul>
+    <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li {{action 'sortBy' 'shareVolume:desc'}}><a href="#">Share Volume</a></li>
+            <li {{action 'filterGains'}}><a href="#">Gains</a></li>
+            <li {{action 'filterLosses'}}><a href="#">Loses</a></li>
+        </ul>
+    </section>
+</nav>
+
+<table>
+    <tr>
+        <th >Company</th>
+        <th>Open Price</th>
+        <th>Current Price</th>
+        <th>Value Change</th>
+        <th>Change</th>
+        <th>Change Percentage</th>
+        <th>Share Volume</th>
+        <th>Actions</th>
+    </tr>
+    <tbody>
+    {{#each company in sortedModel}}
+        <tr>
+            <td>{{#link-to 'marketInfo' company}}{{company.name}}{{/link-to}}</td>
+            <td>{{company.openPrice}}</td>
+            <td>{{company.currentPrice}}</td>
+            <td>{{company.valueChange}}</td>
+            <td><img {{bind-attr src=company.change}}/></td>
+            <td>{{company.changePercentage}}%</td>
+            <td>{{company.shareVolume}}</td>
+            <td>
+                {{#link-to 'placeBidOrder' company.id}}<a href="#" class="button tiny">Buy</a>{{/link-to}}
+                {{#link-to 'placeSaleOrder' company.id}}<a href="#" class="button tiny">Sell</a>{{/link-to}}
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+<hr>
+<div>{{outlet}}</div>
+<div>
+    <hr>
+    Riley Bloomfield, SE3314 Stock Market Application, Winter 2015
+</div>
+

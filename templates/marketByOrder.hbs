@@ -1,0 +1,43 @@
+<h4>Market By Order</h4>
+<div class="row">
+    <div class="large-6 columns">
+        <table class="sideBySide">
+            <thread>
+                <th colspan="2">Buy</th>
+                <tr>
+                    <td>Volume</td>
+                    <td>Price</td>
+                </tr>
+            </thread>
+            <tbody>
+            {{#each order in controllers.marketInfo.displayBuyOrders}}
+                <tr>
+                    <td>{{order.volume}}</td>
+                    <td>{{order.price}}</td>
+                <tr>
+            {{/each}}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="large-6 columns">
+        <table class="sideBySide">
+            <thread>
+                <th colspan="2">Sell</th>
+                <tr>
+                    <td>Price</td>
+                    <td>Volume</td>
+                </tr>
+            </thread>
+            <tbody>
+            {{#each order in controllers.marketInfo.displaySellOrders}}
+                <tr>
+                    <td>{{order.price}}</td>
+                    <td>{{order.volume}}</td>
+                <tr>
+            {{/each}}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

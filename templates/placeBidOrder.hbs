@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="large-6 columns">
+        <h4>Place Bid Order</h4>
+        <form>
+            <fieldset>
+                <legend>{{model.name}}</legend>
+                <label>Number of Shares
+                    <input {{input value=volume  id="volume" type="text" }}>
+                </label>
+                <label>Purchase Price
+                    <input {{input value=price  id="price" type="text" }}>
+                </label>
+            </fieldset>
+            <div class="row">
+                <div class="large-6 columns">
+                    <button type="button" {{action 'submit'}}>Submit</button>
+                </div>
+                <div class="large-6 columns">
+                    {{#link-to 'stockStateSummary'}}<button type="button">Cancel</button>{{/link-to}}
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="large-6 columns">{{outlet "symbol"}}</div>
+</div>

@@ -1,0 +1,40 @@
+.banner {
+    width: 20em;
+    text-align: center;
+    padding:1px;
+    border:1px solid #021a40;
+    background-color:#2266cc;
+}
+body {
+    text-align: center;
+}
+
+.stockStateSummary {
+    text-transform: capitalize;
+    text-align: center;
+}
+.companySymbol {
+    width: 5em;
+    text-align: center;
+}
+
+table{
+    text-align: center;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+th {
+    text-align: center;
+}
+
+.active {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.sideBySide {
+    margin: 0px;
+    padding: 0px;
+}
